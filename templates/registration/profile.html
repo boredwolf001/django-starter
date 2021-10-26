@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% load widget_tweaks %}
+{% block content %}
+<div style="width: 500px">
+  <h1 class="display-4 py-3">Profile Info</h1>
+  <div class="card" style="width: 18rem">
+    <img
+      src="{{ user.profile.profile_img.url }}"
+      class="card-img-top"
+      alt="{{ user.username }}"
+    />
+    <div class="card-body">
+      <h4 class="card-title">{{ user.username }}</h4>
+      <h6 class="card-subtitle">{{ user.email }}</h6>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

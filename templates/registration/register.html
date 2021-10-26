@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load widget_tweaks %} {% block content %}
+<div style="width: 400px">
+  <h1 class="display-4 my-3">Register</h1>
+  <form action="{% url 'base:register' %}" method="post" enctype="multipart/form-data">
+
+
+      <!-- Errors -->
+      {% if errors %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {% for error in errors %}
+            {{ error }}
+            {% endfor %}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+      {% endif %}
+
+
+      {% csrf_token %}
+      {% for field in uform.visible_fields %}
+      <div class="mb-3">
+            <label for="username" class="form-label">{{ field.label }}</label>
+            {% render_field field class="form-control" %}
+      </div>
+      {% endfor %} {% for field in pform.visible_fields %}
+      <div class="mb-3">
+            <label for="username" class="form-label">{{ field.label }}</label>
+            {% render_field field class="form-control" %}
+      </div>
+      {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+
+{% endblock content %}
