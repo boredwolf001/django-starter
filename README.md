@@ -14,6 +14,10 @@ A starter kit for django with authentiction, profile images, static files
       - ```env\scripts\activate```
       - ```pip install -r requirments.txt```
 
+1. Rename the project
+
+      ```python manage.py renameproject {oldname} {newname}```
+
 1. Make migrations
 
       ```python manage.py makemigrations```
