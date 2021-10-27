@@ -16,7 +16,7 @@ A starter kit for django with authentiction, profile images, static files
 
 1. Rename the project
 
-      ```python manage.py renameproject {oldname} {newname}```
+      ```python manage.py renameproject starter {newname}```
 
 1. Make migrations
 
